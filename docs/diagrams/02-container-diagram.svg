@@ -1,0 +1,174 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="700" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">
+    MetaState Prototype - Container Diagram
+  </text>
+  
+  <!-- Legend -->
+  <rect x="50" y="60" width="200" height="140" fill="none" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="150" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Legend</text>
+  <rect x="60" y="90" width="30" height="20" fill="#3498db"/>
+  <text x="100" y="104" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">Person</text>
+  <rect x="60" y="115" width="30" height="20" fill="#27ae60"/>
+  <text x="100" y="129" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">Container</text>
+  <rect x="60" y="140" width="30" height="20" fill="#f39c12"/>
+  <text x="100" y="154" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">External System</text>
+  <rect x="60" y="165" width="30" height="20" fill="#9b59b6"/>
+  <text x="100" y="179" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">Database</text>
+  
+  <!-- Users -->
+  <rect x="50" y="250" width="140" height="80" rx="10" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="120" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">End Users</text>
+  <text x="120" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Person]</text>
+  <text x="120" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">System users</text>
+  
+  <!-- Developers -->
+  <rect x="50" y="350" width="140" height="80" rx="10" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="120" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Developers</text>
+  <text x="120" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Person]</text>
+  <text x="120" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Platform builders</text>
+  
+  <!-- W3ID Container -->
+  <rect x="250" y="150" width="180" height="120" rx="10" fill="#27ae60" stroke="#229954" stroke-width="2"/>
+  <text x="340" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">W3ID</text>
+  <text x="340" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[TypeScript Container]</text>
+  <text x="340" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Identity management system</text>
+  <text x="340" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">with UUID-based IDs, key</text>
+  <text x="340" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">rotation &amp; JWT signing</text>
+  
+  <!-- eVault Core Container -->
+  <rect x="480" y="300" width="200" height="140" rx="10" fill="#27ae60" stroke="#229954" stroke-width="2"/>
+  <text x="580" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">eVault Core</text>
+  <text x="580" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Node.js/Fastify Container]</text>
+  <text x="580" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">GraphQL API for secure data</text>
+  <text x="580" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">storage using MetaEnvelopes</text>
+  <text x="580" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">&amp; Envelopes with ACL</text>
+  <text x="580" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Port: 4000</text>
+  
+  <!-- eID Wallet Container -->
+  <rect x="250" y="350" width="180" height="120" rx="10" fill="#27ae60" stroke="#229954" stroke-width="2"/>
+  <text x="340" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">eID Wallet</text>
+  <text x="340" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Tauri/Svelte Container]</text>
+  <text x="340" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Cross-platform desktop app</text>
+  <text x="340" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">for identity management</text>
+  <text x="340" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">&amp; credential storage</text>
+  
+  <!-- Control Panel Container -->
+  <rect x="250" y="500" width="180" height="120" rx="10" fill="#27ae60" stroke="#229954" stroke-width="2"/>
+  <text x="340" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Control Panel</text>
+  <text x="340" y="555" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[SvelteKit Container]</text>
+  <text x="340" y="575" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Web dashboard for system</text>
+  <text x="340" y="590" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">monitoring with real-time</text>
+  <text x="340" y="605" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">event streaming</text>
+  
+  <!-- Web3 Adapter Container -->
+  <rect x="720" y="200" width="180" height="120" rx="10" fill="#27ae60" stroke="#229954" stroke-width="2"/>
+  <text x="810" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Web3 Adapter</text>
+  <text x="810" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[TypeScript Container]</text>
+  <text x="810" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Service for blockchain</text>
+  <text x="810" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">integration &amp; data</text>
+  <text x="810" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">mapping to eVault</text>
+  
+  <!-- Platform Applications -->
+  <rect x="1050" y="150" width="160" height="100" rx="10" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="1130" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Blabsy Platform</text>
+  <text x="1130" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Firebase/Next.js]</text>
+  <text x="1130" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Social media platform</text>
+  <text x="1130" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">integration</text>
+  
+  <rect x="1050" y="270" width="160" height="100" rx="10" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="1130" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Cerberus Platform</text>
+  <text x="1130" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[TypeScript/TypeORM]</text>
+  <text x="1130" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Security platform</text>
+  <text x="1130" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">integration</text>
+  
+  <!-- Search Engine Service -->
+  <rect x="720" y="400" width="180" height="100" rx="10" fill="#27ae60" stroke="#229954" stroke-width="2"/>
+  <text x="810" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Search Engine</text>
+  <text x="810" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Node.js/Express]</text>
+  <text x="810" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Unified search across</text>
+  <text x="810" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">registry &amp; user profiles</text>
+  
+  <!-- Neo4j Database -->
+  <rect x="480" y="500" width="200" height="80" rx="10" fill="#9b59b6" stroke="#8e44ad" stroke-width="2"/>
+  <text x="580" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Neo4j Database</text>
+  <text x="580" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Graph Database]</text>
+  <text x="580" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Stores MetaEnvelopes &amp; Envelopes</text>
+  
+  <!-- Registry Service -->
+  <rect x="720" y="550" width="180" height="80" rx="10" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="810" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Registry Service</text>
+  <text x="810" y="595" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[External API]</text>
+  <text x="810" y="615" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Platform discovery</text>
+  
+  <!-- Blockchain Networks -->
+  <rect x="1050" y="400" width="160" height="80" rx="10" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="1130" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Blockchain</text>
+  <text x="1130" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[External Systems]</text>
+  <text x="1130" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Web3 networks</text>
+  
+  <!-- Arrows and Relationships -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e"/>
+    </marker>
+  </defs>
+  
+  <!-- Users to eID Wallet -->
+  <line x1="190" y1="290" x2="250" y2="400" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="210" y="335" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Uses desktop app</text>
+  
+  <!-- Users to Control Panel -->
+  <line x1="190" y1="320" x2="250" y2="540" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="210" y="420" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Views dashboard</text>
+  
+  <!-- Developers to Web3 Adapter -->
+  <line x1="190" y1="390" x2="720" y2="260" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="400" y="320" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Integrates platforms</text>
+  
+  <!-- eID Wallet to W3ID -->
+  <line x1="340" y1="350" x2="340" y2="270" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="350" y="310" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Manages W3IDs</text>
+  
+  <!-- W3ID to eVault Core -->
+  <line x1="430" y1="210" x2="480" y2="350" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="440" y="280" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Authenticates</text>
+  
+  <!-- eVault Core to Neo4j -->
+  <line x1="580" y1="440" x2="580" y2="500" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="590" y="470" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Stores/retrieves data</text>
+  
+  <!-- Web3 Adapter to eVault Core -->
+  <line x1="720" y1="300" x2="680" y2="340" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="680" y="315" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Stores mapped data</text>
+  
+  <!-- Platform to Web3 Adapter -->
+  <line x1="1050" y1="200" x2="900" y2="230" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="960" y="210" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Sends data</text>
+  
+  <line x1="1050" y1="320" x2="900" y2="280" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="960" y="295" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Integrates</text>
+  
+  <!-- Web3 Adapter to Blockchain -->
+  <line x1="900" y1="260" x2="1050" y2="440" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="960" y="340" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Blockchain calls</text>
+  
+  <!-- Search Engine to eVault Core -->
+  <line x1="720" y1="450" x2="680" y2="400" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="680" y="420" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Queries data</text>
+  
+  <!-- Search Engine to Registry -->
+  <line x1="810" y1="500" x2="810" y2="550" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="820" y="525" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Registry calls</text>
+  
+  <!-- Control Panel to Search Engine -->
+  <line x1="430" y1="560" x2="720" y2="480" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="560" y="515" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Search requests</text>
+  
+  <!-- Control Panel to eVault Core -->
+  <line x1="430" y1="530" x2="480" y2="420" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="440" y="470" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Real-time events</text>
+</svg>

@@ -1,0 +1,201 @@
+<svg viewBox="0 0 1400 1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1400" height="1000" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="700" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">
+    eVault Core - Component Diagram
+  </text>
+  
+  <!-- Legend -->
+  <rect x="50" y="60" width="200" height="160" fill="none" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="150" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Legend</text>
+  <rect x="60" y="90" width="30" height="20" fill="#3498db"/>
+  <text x="100" y="104" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">Person/External</text>
+  <rect x="60" y="115" width="30" height="20" fill="#1abc9c"/>
+  <text x="100" y="129" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">Component</text>
+  <rect x="60" y="140" width="30" height="20" fill="#f39c12"/>
+  <text x="100" y="154" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">External System</text>
+  <rect x="60" y="165" width="30" height="20" fill="#9b59b6"/>
+  <text x="100" y="179" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">Database</text>
+  <rect x="60" y="190" width="30" height="20" fill="#e74c3c"/>
+  <text x="100" y="204" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">Container Boundary</text>
+  
+  <!-- eVault Core Container Boundary -->
+  <rect x="300" y="150" width="800" height="650" rx="15" fill="none" stroke="#e74c3c" stroke-width="3" stroke-dasharray="10,5"/>
+  <text x="700" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e74c3c">
+    eVault Core [Node.js/Fastify Container]
+  </text>
+  
+  <!-- External Users/Systems -->
+  <rect x="50" y="300" width="140" height="80" rx="10" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="120" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Client Applications</text>
+  <text x="120" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[External]</text>
+  <text x="120" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Web3 Adapter, eID</text>
+  
+  <rect x="50" y="400" width="140" height="80" rx="10" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="120" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Platform Apps</text>
+  <text x="120" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[External]</text>
+  <text x="120" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Blabsy, Cerberus</text>
+  
+  <!-- GraphQL Server Component -->
+  <rect x="320" y="200" width="180" height="120" rx="10" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+  <text x="410" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">GraphQL Server</text>
+  <text x="410" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Component]</text>
+  <text x="410" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Yoga GraphQL server with</text>
+  <text x="410" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">schema, resolvers &amp;</text>
+  <text x="410" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">context management</text>
+  
+  <!-- HTTP Server Component -->
+  <rect x="520" y="200" width="160" height="120" rx="10" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+  <text x="600" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">HTTP Server</text>
+  <text x="600" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Component]</text>
+  <text x="600" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Fastify server with</text>
+  <text x="600" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">REST endpoints,</text>
+  <text x="600" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">documentation</text>
+  
+  <!-- Access Control Component -->
+  <rect x="700" y="200" width="180" height="120" rx="10" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+  <text x="790" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Vault Access Guard</text>
+  <text x="790" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Component]</text>
+  <text x="790" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">JWT token validation,</text>
+  <text x="790" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">ACL enforcement &amp;</text>
+  <text x="790" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">access control</text>
+  
+  <!-- Database Service Component -->
+  <rect x="320" y="380" width="200" height="140" rx="10" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+  <text x="420" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Database Service</text>
+  <text x="420" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Component]</text>
+  <text x="420" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Neo4j operations for</text>
+  <text x="420" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">MetaEnvelopes &amp; Envelopes:</text>
+  <text x="420" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">store, retrieve, search,</text>
+  <text x="420" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">update, delete</text>
+  
+  <!-- W3ID Integration Component -->
+  <rect x="560" y="380" width="160" height="140" rx="10" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+  <text x="640" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">W3ID Integration</text>
+  <text x="640" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Component]</text>
+  <text x="640" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">W3ID instance mgmt,</text>
+  <text x="640" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">JWT signing, secret</text>
+  <text x="640" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">storage &amp; key</text>
+  <text x="640" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">management</text>
+  
+  <!-- Log Service Component -->
+  <rect x="760" y="380" width="160" height="140" rx="10" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+  <text x="840" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Log Service</text>
+  <text x="840" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Component]</text>
+  <text x="840" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">W3ID event logging,</text>
+  <text x="840" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">immutable log chain</text>
+  <text x="840" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">&amp; Neo4j storage</text>
+  <text x="840" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">implementation</text>
+  
+  <!-- Schema Management Component -->
+  <rect x="320" y="580" width="180" height="100" rx="10" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+  <text x="410" y="615" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Schema Management</text>
+  <text x="410" y="635" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Component]</text>
+  <text x="410" y="655" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Data type serialization/</text>
+  <text x="410" y="670" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">deserialization</text>
+  
+  <!-- Webhook Service Component -->
+  <rect x="520" y="580" width="180" height="100" rx="10" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+  <text x="610" y="615" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Webhook Service</text>
+  <text x="610" y="635" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Component]</text>
+  <text x="610" y="655" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Platform notification</text>
+  <text x="610" y="670" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">&amp; event delivery</text>
+  
+  <!-- Secrets Store Component -->
+  <rect x="740" y="580" width="160" height="100" rx="10" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+  <text x="820" y="615" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Secrets Store</text>
+  <text x="820" y="635" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Component]</text>
+  <text x="820" y="655" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Encrypted file-based</text>
+  <text x="820" y="670" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">secret management</text>
+  
+  <!-- External Systems -->
+  <rect x="320" y="750" width="160" height="80" rx="10" fill="#9b59b6" stroke="#8e44ad" stroke-width="2"/>
+  <text x="400" y="780" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Neo4j Database</text>
+  <text x="400" y="795" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[Database]</text>
+  <text x="400" y="815" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Graph data storage</text>
+  
+  <rect x="520" y="750" width="160" height="80" rx="10" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="600" y="780" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Registry Service</text>
+  <text x="600" y="795" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[External API]</text>
+  <text x="600" y="815" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Platform discovery</text>
+  
+  <rect x="720" y="750" width="180" height="80" rx="10" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="810" y="780" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Platform Webhooks</text>
+  <text x="810" y="795" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[External APIs]</text>
+  <text x="810" y="815" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Event notifications</text>
+  
+  <!-- File System -->
+  <rect x="940" y="580" width="140" height="100" rx="10" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="1010" y="615" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">File System</text>
+  <text x="1010" y="635" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">[External]</text>
+  <text x="1010" y="655" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Encrypted secrets</text>
+  <text x="1010" y="670" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">storage</text>
+  
+  <!-- Relationships -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e"/>
+    </marker>
+  </defs>
+  
+  <!-- External to HTTP Server -->
+  <line x1="190" y1="340" x2="520" y2="260" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="340" y="295" font-family="Arial, sans-serif" font-size="10" fill="#34495e">HTTPS requests</text>
+  
+  <line x1="190" y1="440" x2="520" y2="300" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="340" y="365" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Platform API calls</text>
+  
+  <!-- HTTP Server to GraphQL Server -->
+  <line x1="520" y1="260" x2="500" y2="260" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="505" y="250" font-family="Arial, sans-serif" font-size="10" fill="#34495e">GraphQL</text>
+  
+  <!-- GraphQL to Access Guard -->
+  <line x1="500" y1="240" x2="700" y2="240" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="600" y="235" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Auth middleware</text>
+  
+  <!-- Access Guard to W3ID -->
+  <line x1="790" y1="320" x2="640" y2="380" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="700" y="345" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Token validation</text>
+  
+  <!-- GraphQL to Database Service -->
+  <line x1="410" y1="320" x2="420" y2="380" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="425" y="350" font-family="Arial, sans-serif" font-size="10" fill="#34495e">CRUD operations</text>
+  
+  <!-- Database Service to Neo4j -->
+  <line x1="420" y1="520" x2="400" y2="750" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="405" y="635" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Cypher queries</text>
+  
+  <!-- Database Service to Schema Management -->
+  <line x1="420" y1="520" x2="410" y2="580" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="425" y="550" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Type handling</text>
+  
+  <!-- W3ID to Log Service -->
+  <line x1="720" y1="450" x2="760" y2="450" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="735" y="445" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Event logging</text>
+  
+  <!-- W3ID to Secrets Store -->
+  <line x1="720" y1="480" x2="740" y2="600" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="725" y="535" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Key management</text>
+  
+  <!-- Secrets Store to File System -->
+  <line x1="900" y1="630" x2="940" y2="630" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="915" y="625" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Read/write</text>
+  
+  <!-- GraphQL to Webhook Service -->
+  <line x1="500" y1="300" x2="610" y2="580" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="540" y="440" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Trigger webhooks</text>
+  
+  <!-- Webhook Service to Registry -->
+  <line x1="610" y1="680" x2="600" y2="750" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="615" y="715" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Platform list</text>
+  
+  <!-- Webhook Service to Platform Webhooks -->
+  <line x1="700" y1="630" x2="720" y2="790" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="705" y="710" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Notify platforms</text>
+  
+  <!-- Log Service to Neo4j -->
+  <line x1="760" y1="500" x2="480" y2="790" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="620" y="650" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Store logs</text>
+</svg>
