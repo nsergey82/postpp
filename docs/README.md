@@ -146,3 +146,18 @@ The eVault uses a hierarchical data structure:
 - pnpm package manager
 - Neo4j database for eVault Core
 - Docker for containerized development (`pnpm dev:evault`)
+
+## Thoughts and Analysis
+
+This section contains strategic analysis and architectural thoughts about the MetaState Prototype system:
+
+### Strategic Analysis Documents
+**File:** [thoughts-on-transforming-to-elixir.md](thoughts-on-transforming-to-elixir.md)
+
+Comprehensive analysis of migrating the MetaState backend services from TypeScript/Node.js to Elixir/Erlang, including:
+- Component-by-component value assessment for migration potential
+- Detailed migration strategy with 3-phase approach
+- Worst-case scenario analysis and risk mitigation strategies
+- Performance impact projections and architectural benefits
+- Decision framework with go/no-go criteria for each phase
+- Recommendation for selective migration approach
