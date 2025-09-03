@@ -1,10 +1,75 @@
-# MetaState Prototype - Architecture Documentation
+# MetaState Prototype - Documentation Hub
 
-This directory contains architecture diagrams following the C4 model (Context, Container, Component, and Class diagrams) for the MetaState Prototype Project.
+Welcome to the MetaState Prototype documentation. This guide is organized by role to help you find the most relevant information quickly.
 
-## Architecture Diagrams
+## Table of Contents
 
-### 1. System Context Diagram
+- [👨‍💻 For Developers](#-for-developers)
+  - [Getting Started Guide](#getting-started-guide)
+  - [Git Workflow Scripts](#git-workflow-scripts)
+  - [Development Workflow](#development-workflow)
+  - [Environment Requirements](#environment-requirements)
+- [🏗️ For Architects](#️-for-architects)
+  - [Architecture Overview](#architecture-overview)
+  - [System Architecture Diagrams](#system-architecture-diagrams)
+  - [Key Architectural Patterns](#key-architectural-patterns)
+  - [Technology Stack](#technology-stack)
+- [📊 For Product Owners & Stakeholders](#-for-product-owners--stakeholders)
+  - [Strategic Analysis & Insights](#strategic-analysis--insights)
+
+---
+
+## 👨‍💻 For Developers
+
+### Getting Started Guide
+
+**File:** [working-with-this-codebase.md](working-with-this-codebase.md)
+
+Comprehensive guide for developers getting started with the MetaState Prototype codebase, including:
+- Prerequisites and installation instructions
+- Environment setup and configuration
+- Development workflows and commands
+- Docker and Docker Compose usage
+- Package-specific development instructions
+- Testing and deployment procedures
+- Troubleshooting common issues
+
+**File:** [../scripts/git/README.md](../scripts/git/README.md)
+
+Git workflow utilities and automation scripts for the MetaState Prototype project, including:
+- Quick commit with automatic quality checks
+- Branch management and naming conventions
+- Repository status analysis and synchronization
+- Automated release management with changelog generation
+- Repository maintenance and cleanup utilities
+- Git hooks for code quality enforcement
+
+### Development Workflow
+
+1. **Setup**: `pnpm install` from root installs all dependencies
+2. **Development**: Use `pnpm dev` for parallel development
+3. **Testing**: `pnpm test` runs tests across all packages
+4. **Quality**: `pnpm check` ensures formatting, linting, and types
+5. **Building**: `pnpm build` creates production builds
+
+### Environment Requirements
+
+- Node.js ≥18
+- pnpm package manager
+- Neo4j database for eVault Core
+- Docker for containerized development (`pnpm dev:evault`)
+
+---
+
+## 🏗️ For Architects
+
+### Architecture Overview
+
+The MetaState Prototype is built as a distributed identity and data storage system using microservices architecture. This section contains detailed architecture diagrams following the C4 model (Context, Container, Component, and Class diagrams).
+
+### System Architecture Diagrams
+
+#### 1. System Context Diagram
 **File:** [diagrams/01-context-diagram.md](diagrams/01-context-diagram.md)
 
 Shows the high-level view of the MetaState Prototype system in its environment, including:
@@ -12,7 +77,7 @@ Shows the high-level view of the MetaState Prototype system in its environment, 
 - External systems (Neo4j Database, Registry Service, Blockchain Networks, Platform Applications)
 - The MetaState Prototype system as a single entity
 
-### 2. Container Diagram
+#### 2. Container Diagram
 **File:** [diagrams/02-container-diagram.md](diagrams/02-container-diagram.md)
 
 Zooms into the MetaState system to show the major containers (applications and databases):
@@ -23,7 +88,7 @@ Zooms into the MetaState system to show the major containers (applications and d
 - **Web3 Adapter**: TypeScript service for blockchain integration
 - **Search Engine**: Node.js/Express unified search service
 
-### 3. Component Diagram - eVault Core
+#### 3. Component Diagram - eVault Core
 **File:** [diagrams/03-component-diagram-evault.md](diagrams/03-component-diagram-evault.md)
 
 Detailed view of the eVault Core container showing its internal components:
@@ -37,7 +102,7 @@ Detailed view of the eVault Core container showing its internal components:
 - **Webhook Service**: Platform notification system
 - **Secrets Store**: Encrypted file-based secret management
 
-### 4. Component Diagram - W3ID
+#### 4. Component Diagram - W3ID
 **File:** [diagrams/05-component-diagram-w3id.md](diagrams/05-component-diagram-w3id.md)
 
 Detailed view of the W3ID container showing its internal components for identity management:
@@ -50,7 +115,7 @@ Detailed view of the W3ID container showing its internal components for identity
 - **Array Utils**: Set operations for key validation and comparison during log chain validation
 - **Error Handling**: Custom error types for validation failures, malformed chains, and signature verification
 
-### 5. Component Diagram - Web3 Adapter
+#### 5. Component Diagram - Web3 Adapter
 **File:** [diagrams/06-component-diagram-web3-adapter.md](diagrams/06-component-diagram-web3-adapter.md)
 
 Detailed view of the Web3 Adapter container showing its internal components for blockchain and platform integration:
@@ -62,12 +127,12 @@ Detailed view of the Web3 Adapter container showing its internal components for 
 - **Schema Manager**: Manages JSON schema mappings and validation rules for different platform data structures
 - **Logger System**: Structured logging infrastructure with configurable transports for audit and debugging
 
-### 6. Class Diagram
+#### 6. Class Diagram
 **File:** [diagrams/04-class-diagram.md](diagrams/04-class-diagram.md)
 
 Shows the key classes and their relationships in both W3ID and eVault Core systems:
 
-#### W3ID Core Classes:
+##### W3ID Core Classes:
 - **W3ID**: Main identity class with JWT signing capabilities
 - **W3IDBuilder**: Builder pattern for creating W3ID instances
 - **IDLogManager**: Manages immutable event logging
@@ -75,7 +140,7 @@ Shows the key classes and their relationships in both W3ID and eVault Core syste
 - **LogService**: Neo4j implementation of StorageSpec
 - **SecretsStore**: Encrypted secret management
 
-#### eVault Core Classes:
+##### eVault Core Classes:
 - **MetaEnvelope\<T\>**: Data structure with ontology and ACL
 - **Envelope\<T\>**: Individual data container with type information
 - **DbService**: Neo4j database operations
@@ -83,81 +148,71 @@ Shows the key classes and their relationships in both W3ID and eVault Core syste
 - **VaultAccessGuard**: Authentication and authorization middleware
 - **EVaultClient**: Client for eVault operations with health monitoring
 
-#### Supporting Types and Interfaces:
+##### Supporting Types and Interfaces:
 - **Signer**: Cryptographic signing interface
 - **LogEvent**: W3ID event log structure
 - **VaultContext**: GraphQL context with authentication info
 
-## Key Architectural Patterns
+### Key Architectural Patterns
 
-### 1. **W3ID Integration Pattern**
+#### 1. **W3ID Integration Pattern**
 All components authenticate through the W3ID system:
 1. Obtain W3ID token through authentication
 2. Include token in Authorization header
 3. Access resources based on W3ID permissions and ACL
 
-### 2. **MetaEnvelope Data Model**
+#### 2. **MetaEnvelope Data Model**
 The eVault uses a hierarchical data structure:
 - **MetaEnvelope**: Top-level container with ontology classification
 - **Envelope**: Individual data items with type information
 - **ACL**: Fine-grained access control per MetaEnvelope
 
-### 3. **Event-Driven Architecture**
+#### 3. **Event-Driven Architecture**
 - W3ID maintains immutable event logs for identity operations
 - eVault sends webhook notifications to platforms on data changes
 - Control Panel streams real-time events via Server-Sent Events
 
-### 4. **Microservices Architecture**
+#### 4. **Microservices Architecture**
 - Each container is independently deployable
 - Services communicate via HTTP/GraphQL APIs
 - Registry service enables dynamic service discovery
 
-### 5. **Storage Strategy**
+#### 5. **Storage Strategy**
 - Neo4j graph database for complex data relationships
 - File-based encrypted storage for secrets
 - In-memory caching for performance optimization
 
-## Technology Stack
+### Technology Stack
 
-### Core Technologies:
+#### Core Technologies:
 - **Languages**: TypeScript, Node.js
 - **Frameworks**: Fastify, GraphQL Yoga, SvelteKit, Tauri
 - **Database**: Neo4j (graph database)
 - **Build System**: TurboRepo with pnpm
 - **Code Quality**: Biome (linting/formatting), Vitest (testing)
 
-### Key Libraries:
+#### Key Libraries:
 - **Identity**: W3ID with UUID v4/v5, JWT signing with `jose`
 - **Cryptography**: TweetNaCl for signing and encryption
 - **Testing**: Vitest with TestContainers for integration tests
 - **UI Components**: Svelte with Storybook for component development
 
-## Development Workflow
+---
 
-1. **Setup**: `pnpm install` from root installs all dependencies
-2. **Development**: Use `pnpm dev` for parallel development
-3. **Testing**: `pnpm test` runs tests across all packages
-4. **Quality**: `pnpm check` ensures formatting, linting, and types
-5. **Building**: `pnpm build` creates production builds
+## 📊 For Product Owners & Stakeholders
 
-## Environment Requirements
+### Strategic Analysis & Insights
 
-- Node.js ≥18
-- pnpm package manager
-- Neo4j database for eVault Core
-- Docker for containerized development (`pnpm dev:evault`)
-
-## Thoughts and Analysis
-
-This section contains strategic analysis and architectural thoughts about the MetaState Prototype system:
-
-### Strategic Analysis Documents
+This section contains strategic analysis, architectural thoughts, and insights about the MetaState Prototype system to help inform product and business decisions.
+#### Technology Migration Analysis
 **File:** [thoughts-on-transforming-to-elixir.md](thoughts-on-transforming-to-elixir.md)
 
 Comprehensive analysis of migrating the MetaState backend services from TypeScript/Node.js to Elixir/Erlang, including:
-- Component-by-component value assessment for migration potential
-- Detailed migration strategy with 3-phase approach
-- Worst-case scenario analysis and risk mitigation strategies
-- Performance impact projections and architectural benefits
-- Decision framework with go/no-go criteria for each phase
-- Recommendation for selective migration approach
+- **Business Impact Assessment**: Component-by-component value analysis for migration potential
+- **Strategic Planning**: Detailed 3-phase migration strategy with clear milestones
+- **Risk Management**: Worst-case scenario analysis and comprehensive risk mitigation strategies
+- **Performance Projections**: Quantified performance impact estimates and architectural benefits
+- **Decision Framework**: Go/no-go criteria for each migration phase with success metrics
+- **Recommendation**: Data-driven recommendation for selective migration approach
+
+This analysis provides stakeholders with the insights needed to make informed decisions about technology evolution and resource allocation.
