@@ -21,6 +21,10 @@ MetaEnvelopes have them but no envelopes? Both?
 
 Envelopes in-rest vs. in-transit
 
+https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructure/evault-core/src/protocol/vault-access-guard.ts#L58 -- check if well tested. What if non-platform injects user?
+
+
+
 The moment the data leaves the eVault, there is no technical way to guarantee ACLs are respected. In particular, platforms handling our data can violate ACL limitations. The protection against that is socioeconomic (e.g., through eReputation). For example, at the moment only accredited platforms have access to user eVaults.
 
 ## Endpoints
@@ -29,6 +33,8 @@ The moment the data leaves the eVault, there is no technical way to guarantee AC
 In the prototype we only considers platforms as agents accessing the eVaults.
 For each request a platform needs to prove it is accredited.
 JWT, refresh. Replay possible withing 15 minutes window.
+
+what does jose.jwtVerify(token, JWKS) do exactly?
 
 [^1]: In the prototype and certain implementations of the eVault it is possible for a person with elevated permissions on real or virtual machines that host the eVault to get direct access to the data of the eVault. The goal is to gradually introduce enough obfuscation and encryption to make this extremely unlikely.
 
