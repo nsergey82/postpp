@@ -1,20 +1,20 @@
 # eVault protocol
 
-The only way[^1] to read or write resources on the eVault is by using the eVault protocol.
+The only way[^1] to access resources on the eVault is by using the eVault protocol.
 Currently, we specify only one protocol based on GraphQL, but other protocols may appear later.
 We expose operations for creating, updating, deleting, and querying data -- which is stored using the MetaEnvelope and Envelope model; referenced through URIs (usually including eNames/w3ids); protected by access lists (ACLs). Any future protocol (e.g., on top of websockets) will have the same requirements.
 
 ## Envelopes / MetaEnvelopes
 
-Envelope: The smallest unit of data in an eVault addressable by its unique identifier and ontology reference. Each envelope has an attached ontological definition and ACL which defines who is allowed to access this envelope.
+Envelope: The smallest unit of data in an eVault addressable by its unique identifier (local or global) and ontology reference. Each envelope has an attached ontological definition and ACL which defines who is allowed to access this envelope.
 
-MetaEnvelope: To group related pieces of data, envelopes are linked together using something called a MetaEnvelope. Each MetaEnvelope has its own ID and links the envelopes it includes.
+MetaEnvelope: To group related pieces of data every envelope is associated with a single MetaEnvelope. A MetaEnvelope has its own w3id and links to w3ids of all the envelopes in it.
 
 TODO: are ACLs really on envelope level? maybe need to fix definitions doc
 
 ## URIs
 Resources are referenced by URI with an addition of the w3id scheme [link](link). A w3id can resolve to an eVault location, e.g., ip address and port, or it can resolve directly to a MetaEnvelope on the eVault. Other standard parts of URIs apply., 
-
+TODO: can really reference a single envelope in a meta envelope? should we?
 ## ACL
 
 MetaEnvelopes have them but no envelopes? Both?
