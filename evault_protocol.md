@@ -34,7 +34,7 @@ In the prototype we only considers platforms as agents accessing the eVaults.
 For each request a platform needs to prove it is accredited.
 JWT, refresh. Replay possible withing 15 minutes window.
 
-what does jose.jwtVerify(token, JWKS) do exactly?
+what does jose.jwtVerify(token, JWKS) do exactly? why is jwks in "registry" part? And yet it looks like it is on every localhost? Will it do chain of trust traversal for certificates? Or just check validity trivially?
 
 [^1]: In the prototype and certain implementations of the eVault it is possible for a person with elevated permissions on real or virtual machines that host the eVault to get direct access to the data of the eVault. The goal is to gradually introduce enough obfuscation and encryption to make this extremely unlikely.
 
