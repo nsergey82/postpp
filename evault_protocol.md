@@ -47,6 +47,9 @@ https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructur
 I don't like that we use URIs to identify platforms instead of their w3ids. And https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructure/evault-core/src/protocol/graphql-server.ts#L193 should be aboidable
 The fanout of "webhook" calling by the evault is crazy. This certainly should be an infrastructure service asap. Also, no retry on failures?!
 
+## pagination
+we probably want to support pagination for all requests that can return large values, long lists -- e.g. all envelope ids, all evaults in the universe, etc.
+
 ## References
 * [Definitions](https://izi.synology.me:792/oo/r/10oUxriiBS7uiWfga7LMq0zDaFNWIaFa)
 * [Adapter](https://izi.synology.me:792/oo/r/12tKk7UaMYtndluuLWcDyWXkE22DeS92)
