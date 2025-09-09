@@ -12,6 +12,10 @@ MetaEnvelope: To group related pieces of data every envelope is associated with 
 
 TODO: are ACLs really on envelope level? maybe need to fix definitions doc
 
+## Keys
+https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructure/evault-core/src/evault.ts#L74
+How can we rotate public key on the evault?
+
 ## URIs
 Resources are referenced by URI with an addition of the w3id scheme [link](link). A w3id can resolve to an eVault location, e.g., ip address and port, or it can resolve directly to a MetaEnvelope on the eVault. Other standard parts of URIs apply., 
 TODO: can really reference a single envelope in a meta envelope? should we?
