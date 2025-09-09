@@ -38,6 +38,10 @@ what does jose.jwtVerify(token, JWKS) do exactly? why is jwks in "registry" part
 
 [^1]: In the prototype and certain implementations of the eVault it is possible for a person with elevated permissions on real or virtual machines that host the eVault to get direct access to the data of the eVault. The goal is to gradually introduce enough obfuscation and encryption to make this extremely unlikely.
 
+## Awareness
+https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructure/evault-core/src/protocol/graphql-server.ts#L62
+I don't like that we use URIs to identify platforms instead of their w3ids
+
 ## References
 * [Definitions](https://izi.synology.me:792/oo/r/10oUxriiBS7uiWfga7LMq0zDaFNWIaFa)
 * [Adapter](https://izi.synology.me:792/oo/r/12tKk7UaMYtndluuLWcDyWXkE22DeS92)
