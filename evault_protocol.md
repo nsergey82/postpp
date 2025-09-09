@@ -40,7 +40,8 @@ what does jose.jwtVerify(token, JWKS) do exactly? why is jwks in "registry" part
 
 ## Awareness
 https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructure/evault-core/src/protocol/graphql-server.ts#L62
-I don't like that we use URIs to identify platforms instead of their w3ids
+I don't like that we use URIs to identify platforms instead of their w3ids. And https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructure/evault-core/src/protocol/graphql-server.ts#L193 should be aboidable
+The fanout of "webhook" calling by the evault is crazy. This certainly should be an infrastructure service asap. Also, no retry on failures?!
 
 ## References
 * [Definitions](https://izi.synology.me:792/oo/r/10oUxriiBS7uiWfga7LMq0zDaFNWIaFa)
