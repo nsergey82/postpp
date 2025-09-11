@@ -31,6 +31,10 @@ https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructur
 
 The moment the data leaves the eVault, there is no technical way to guarantee ACLs are respected. In particular, platforms handling our data can violate ACL limitations. The protection against that is socioeconomic (e.g., through eReputation). For example, at the moment only accredited platforms have access to user eVaults.
 
+platforms always have access, users accessing "directly" need to be explicitly in the ACL.
+
+TODO: platforms needs to be able to read ACLs for  resources, or else they can't form their own auth models when scanning data formed by other platforms. They have access to all the data, so access to that metadata is not much worse as a privacy violation.
+
 ## Endpoints
 
 ## Requester authentication
