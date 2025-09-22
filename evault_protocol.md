@@ -6,28 +6,25 @@ We expose operations for creating, updating, deleting, and querying data -- whic
 
 ## Envelopes / MetaEnvelopes
 
-Envelope: The smallest unit of data in an eVault addressable by its unique identifier (local or global) and ontology reference. Each envelope has an attached ontological definition and ACL which defines who is allowed to access this envelope.
+Envelope: the smallest unit of data in an eVault addressable by its unique identifier (usually local). It is effectively an RDF tripple. When an envelope needs to refer to another resource it uses w3id.
+MetaEnvelope: a group of related envelopes. A MetaEnvelope has its own w3id and links to w3ids of all the envelopes in it. Additionally the access list (ACL) of all the envelopes is defined in the MetaEnvelope.
 
-MetaEnvelope: To group related pieces of data every envelope is associated with a single MetaEnvelope. A MetaEnvelope has its own w3id and links to w3ids of all the envelopes in it.
+TODO: fix definitions doc w.r.t. ACLs on envelopes
 
-TODO: are ACLs really on envelope level? maybe need to fix definitions doc
+Envelopes in-rest vs. in-transit
 
 ## Keys
 https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructure/evault-core/src/evault.ts#L74
 How can we rotate public key on the evault?
 
 ## URIs
-Resources are referenced by URI with an addition of the w3id scheme [link](link). A w3id can resolve to an eVault location, e.g., ip address and port, or it can resolve directly to a MetaEnvelope on the eVault. Other standard parts of URIs apply., 
+In many places instead of domain based URIs in the ecosystem we use w3ids [link](link). A w3id can resolve to an eVault location, e.g., ip address and port, or it can resolve directly to a MetaEnvelope on the eVault. Other standard parts of URIs apply., 
 TODO: can really reference a single envelope in a meta envelope? should we?
+
 ## ACL
 
-MetaEnvelopes have them but no envelopes? Both?
-
-Envelopes in-rest vs. in-transit
 
 https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructure/evault-core/src/protocol/vault-access-guard.ts#L58 -- check if well tested. What if non-platform injects user?
-
-
 
 The moment the data leaves the eVault, there is no technical way to guarantee ACLs are respected. In particular, platforms handling our data can violate ACL limitations. The protection against that is socioeconomic (e.g., through eReputation). For example, at the moment only accredited platforms have access to user eVaults.
 
@@ -38,7 +35,7 @@ TODO: platforms needs to be able to read ACLs for  resources, or else they can't
 ## Endpoints
 
 ## Requester authentication
-In the prototype we only considers platforms as agents accessing the eVaults.
+In the prototype we only consider platforms as agents accessing the eVaults.
 For each request a platform needs to prove it is accredited.
 JWT, refresh. Replay possible withing 15 minutes window.
 
