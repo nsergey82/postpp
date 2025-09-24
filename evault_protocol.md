@@ -15,7 +15,7 @@ Envelopes in-rest vs. in-transit
 
 ## Keys
 https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructure/evault-core/src/evault.ts#L74
-How can we rotate public key on the evault?
+ATM owners can't rotate the public key on the evault (admins can).
 
 ## URIs
 In many places instead of domain based URIs in the ecosystem we use w3ids [link](link). A w3id can resolve to an eVault location, e.g., ip address and port, or it can resolve directly to a MetaEnvelope on the eVault. Other standard parts of URIs apply., 
@@ -30,22 +30,24 @@ The moment the data leaves the eVault, there is no technical way to guarantee AC
 
 platforms always have access, users accessing "directly" need to be explicitly in the ACL.
 
-TODO: platforms needs to be able to read ACLs for  resources, or else they can't form their own auth models when scanning data formed by other platforms. They have access to all the data, so access to that metadata is not much worse as a privacy violation.
+TODO: platforms needs to be able to read ACLs for  resources, or else they can't form their own auth models when scanning data formed by other platforms. They have access to all the data, so access to that metadata is not much worse as a privacy violation. [see](https://github.com/MetaState-Prototype-Project/prototype/issues/351)
 
 ## Endpoints
 
 ## Requester authentication
-In the prototype we only consider platforms as agents accessing the eVaults.
+In the prototype we mainly consider platforms as agents accessing the eVaults.
 For each request a platform needs to prove it is accredited.
 JWT, refresh. Replay possible withing 15 minutes window.
 
 what does jose.jwtVerify(token, JWKS) do exactly? why is jwks in "registry" part? And yet it looks like it is on every localhost? Will it do chain of trust traversal for certificates? Or just check validity trivially?
 
+Note: context is set [here](https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructure/evault-core/src/protocol/graphql-server.ts#L298) the names are [vague](https://github.com/MetaState-Prototype-Project/prototype/issues/353)
+
 [^1]: In the prototype and certain implementations of the eVault it is possible for a person with elevated permissions on real or virtual machines that host the eVault to get direct access to the data of the eVault. The goal is to gradually introduce enough obfuscation and encryption to make this extremely unlikely.
 
 ## Awareness
 https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructure/evault-core/src/protocol/graphql-server.ts#L62
-I don't like that we use URIs to identify platforms instead of their w3ids. And https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructure/evault-core/src/protocol/graphql-server.ts#L193 should be aboidable
+I don't like that we use URIs to identify platforms instead of their w3ids. And https://github.com/MetaState-Prototype-Project/prototype/blob/main/infrastructure/evault-core/src/protocol/graphql-server.ts#L193 should be avoidable
 The fanout of "webhook" calling by the evault is crazy. This certainly should be an infrastructure service asap. Also, no retry on failures?!
 
 ## pagination
